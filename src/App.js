@@ -1,9 +1,24 @@
-import "./App.css";
+import "./css/App.css";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { getList } from "./state/actions/restaurantActions";
 
-function App() {
-  return <div className="App">
-    
-  </div>;
+function App(props) {
+  const { testState, setTestState } = useState([]);
+  useEffect(() => {
+    props.getList();
+    console.log(props)
+  }, []);
+
+  return <div className="App">TEST</div>;
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+  state,
+  };
+
+  
+};
+
+export default connect(mapStateToProps, { getList})(App);
