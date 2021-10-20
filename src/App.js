@@ -1,24 +1,28 @@
-import "./css/App.css";
+import "./css/app.css";
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { getList } from "./state/actions/restaurantActions";
+import Navbar from "./components/Navbar"
+import RestaurantList from "./components/RestaurantList";
 
 function App(props) {
-  const { testState, setTestState } = useState([]);
+  const { selectedIndex, setSelectedIndex } = useState(null);
+
+
   useEffect(() => {
     props.getList();
-    console.log(props)
   }, []);
 
-  return <div className="App">TEST</div>;
+  return <div className="App">
+    <Navbar />
+    <RestaurantList />
+  </div>;
 }
 
 const mapStateToProps = (state) => {
   return {
-  state,
+    state,
   };
-
-  
 };
 
-export default connect(mapStateToProps, { getList})(App);
+export default connect(mapStateToProps, { getList })(App);

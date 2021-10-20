@@ -1,0 +1,33 @@
+.topBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #43e895;
+  height: 65px;
+  vertical-align: middle;
+}
+.titleText {
+  font-family: "Mulish";
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 6%;
+  position: absolute;
+  left: 50%;
+  transform:translate(-50%,0);
+}
+
+.mapIcon {
+  width: auto;
+  height: 32px;
+  margin-top: 4%;
+  margin-right: 5%;
+}
+
+.backIcon {
+  width: auto;
+  height: 25px;
+  margin-top: 4%;
+  margin-left: 4%;
+}

@@ -4,7 +4,7 @@ import {
   GET_LIST_FAIL,
 } from "../actions/restaurantActions";
 
-export const initialState = { isLoading: false, error: null, data: null };
+export const initialState = { isLoading: true, error: null, data: null };
 
 export const restaurantReducer = (state = initialState, action) => {
   switch (action.type) {
