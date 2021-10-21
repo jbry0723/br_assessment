@@ -9,7 +9,7 @@ function ListItem(props) {
   let { updateSelected } = props;
   let { bgImg, name, category } = props;
   return (
-    <div
+    <section
       onClick={handleClick}
       className="itemDiv"
       style={{ backgroundImage: `url(${bgImg}` }}
@@ -17,7 +17,7 @@ function ListItem(props) {
       <div className="overlay"></div>
       <h2 className="nameText">{name}</h2>
       <p className="categoryText">{category}</p>
-    </div>
+    </section>
   );
 }
 

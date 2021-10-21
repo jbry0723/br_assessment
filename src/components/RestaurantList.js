@@ -5,17 +5,17 @@ import sLoadIcon from "../assets/loading_s_small.gif";
 import ListItem from "../components/ListItem";
 
 function RestaurantList(props) {
-  let {updateSelected}=props
+  let { updateSelected } = props;
   let { isLoading, data } = props.state.restaurant;
   if (isLoading) {
     return (
-      <div className="loadingWindow">
+      <main className="loadingWindow">
         <img className="sLoadIcon" src={sLoadIcon} alt="Loading Icon" />
-      </div>
+      </main>
     );
   }
   return (
-    <div className="scrollWindow">
+    <main className="scrollWindow">
       {data.map((entry) => {
         return (
           <ListItem
@@ -28,7 +28,7 @@ function RestaurantList(props) {
           />
         );
       })}
-    </div>
+    </main>
   );
 }
 
