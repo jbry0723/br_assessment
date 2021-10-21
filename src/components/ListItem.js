@@ -1,15 +1,24 @@
 import "../css/listitem.css";
 import React from "react";
 
-
-
 function ListItem(props) {
-    let {restaurantData}=props
-    console.log(restaurantData)
-    return <div className="listItem">
-       TEST
-    </div>;
-  }
+  let handleClick = (e) => {
+    e.preventDefault();
+    updateSelected(props.id);
+  };
+  let { updateSelected } = props;
+  let { bgImg, name, category } = props;
+  return (
+    <div
+      onClick={handleClick}
+      className="itemDiv"
+      style={{ backgroundImage: `url(${bgImg}` }}
+    >
+      <div className="overlay"></div>
+      <h2 className="nameText">{name}</h2>
+      <p className="categoryText">{category}</p>
+    </div>
+  );
+}
 
-
-  export default ListItem
+export default ListItem;

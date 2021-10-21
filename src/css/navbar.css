@@ -12,22 +12,32 @@
   font-weight: 600;
   color: #ffffff;
   font-size: 17px;
-  margin-top: 6%;
+  margin-top: 8%;
   position: absolute;
   left: 50%;
-  transform:translate(-50%,0);
+  transform: translate(-50%, 0);
 }
 
 .mapIcon {
   width: auto;
   height: 32px;
-  margin-top: 4%;
-  margin-right: 5%;
+  margin-top: 3%;
+  margin-right: 4%;
 }
 
 .backIcon {
   width: auto;
   height: 25px;
-  margin-top: 4%;
-  margin-left: 4%;
+  margin-top: 2%;
+  margin-left: 3.5%;
+}
+
+.hiddenBackIcon {
+
+    width: auto;
+    height: 25px;
+    margin-top: 2%;
+    margin-left: 3.5%;
+    visibility:hidden;
+  
 }

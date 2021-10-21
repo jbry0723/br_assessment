@@ -5,7 +5,8 @@ import sLoadIcon from "../assets/loading_s_small.gif";
 import ListItem from "../components/ListItem";
 
 function RestaurantList(props) {
-let {isLoading,data}=props.state.restaurant
+  let {updateSelected}=props
+  let { isLoading, data } = props.state.restaurant;
   if (isLoading) {
     return (
       <div className="loadingWindow">
@@ -13,11 +14,19 @@ let {isLoading,data}=props.state.restaurant
       </div>
     );
   }
-  console.log(data);
   return (
     <div className="scrollWindow">
       {data.map((entry) => {
-        return <ListItem key={entry.name+entry.location.address} restaurantData={entry} />;
+        return (
+          <ListItem
+            key={entry.name + entry.location.address}
+            id={data.indexOf(entry)}
+            bgImg={entry.backgroundImageURL}
+            name={entry.name}
+            category={entry.category}
+            updateSelected={updateSelected}
+          />
+        );
       })}
     </div>
   );

@@ -1,0 +1,42 @@
+.itemDiv {
+  height: 180px;
+  background-size: 100% 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: relative;
+}
+
+.nameText {
+  margin-top: 0;
+  margin-bottom: 6px;
+  margin-left: 12px;
+  font-family: "Mulish";
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16px;
+  z-index: 1;
+}
+.categoryText {
+  margin-top: 0;
+  margin-bottom: 6px;
+  margin-left: 12px;
+  bottom: 0;
+  right: 0;
+  font-family: "Mulish";
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 12px;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background-size: 100%;
+  background-image: url("../assets/background_gradient.png");
+  background-repeat: no-repeat;
+}

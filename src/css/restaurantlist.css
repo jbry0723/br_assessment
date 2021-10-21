@@ -1,3 +1,13 @@
-.sLoadIcon{
-    margin-top:50%;
+.sLoadIcon {
+  margin-top: 50%;
+}
+
+.scrollWindow {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  z-index:-1;
 }

@@ -1,0 +1,19 @@
+.detailsDiv {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: 5;
+
+  max-Width:100%;
+  transition:'max-width 5s';
+}
+
+.hiddenDetails {
+  max-width:0;
+  transition:'max-width 5s';
+}
