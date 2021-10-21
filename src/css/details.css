@@ -6,14 +6,72 @@
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: red;
-  z-index: 5;
-
-  max-Width:100%;
-  transition:'max-width 5s';
+  background-color: white;
+  z-index: 1;
+  text-align:left;
 }
 
-.hiddenDetails {
-  max-width:0;
-  transition:'max-width 5s';
+.mapDiv{
+    background-color:black;
+    height:180px;
+    width:100%;
+    margin: 0 0 0 0;
 }
+
+.nameBanner{
+  background-color:#34B379;
+  height:60px;
+  width:100%;
+  margin: 0 0 0 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: flex-start;
+
+}
+.restaurantName{
+  font-family:"Mulish";
+  font-weight: 600;
+  color: #ffffff;
+  font-size:16px;
+  margin: 0px 0px 3px 12px;
+}
+.restaurantCategory{
+  font-family:"Mulish";
+  font-weight: 400;
+  color: #ffffff;
+  font-size:12px;
+  margin: 3px 0px 0px 12px;
+}
+
+address, p{
+  font-family:"Mulish";
+  font-style:normal;
+  font-weight: 400;
+  font-size:16px;
+  color:#2A2A2A;
+  margin:0 0 0 0;
+}
+address{
+margin-left:12px;
+}
+
+.addressP{
+  margin-top:12px;
+}
+.phoneP{
+  margin-top:26px
+}
+
+.twitterP{
+  margin-top:26px
+}
+
+
+
+
+
+
+
+
+

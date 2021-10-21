@@ -6,8 +6,7 @@ function ListItem(props) {
     e.preventDefault();
     updateSelected(props.id);
   };
-  let { updateSelected } = props;
-  let { bgImg, name, category } = props;
+  let { updateSelected,bgImg, name, category } = props;
   return (
     <section
       onClick={handleClick}
