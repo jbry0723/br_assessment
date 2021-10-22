@@ -1,13 +1,14 @@
 import "../css/details.css";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import GoogleMapReact from "google-map-react";
 
 function Details(props) {
   const [restaurantData, setRestaurantData] = useState({
     name: "",
     category: "",
     contact: {},
-    location: {},
+    location: { lat: 39.8097343, lng: -98.5556199 },
   });
 
   let { selected } = props;
@@ -21,35 +22,69 @@ function Details(props) {
     transition: "max-width .3s, opacity .2s",
   };
 
+  let mapKey = Math.random() * Math.random();
+
   useEffect(() => {
     if (selected !== null) {
       setRestaurantData(props.state.restaurant.data[props.selected]);
+      mapKey = Math.random() * Math.random();
     }
   }, [selected, props.selected]);
 
-  console.log(restaurantData);
   let { name, category, contact, location } = restaurantData;
+
+  const restaurantLocation = {
+    lat: restaurantData?.location.lat,
+    lng: restaurantData?.location.lng,
+  };
+
+  const renderMarkers = (map, maps) => {
+    if (selected !== null) {
+      let marker = new maps.Marker({
+        position: {
+          lat: restaurantData?.location.lat,
+          lng: restaurantData?.location.lng,
+        },
+        map,
+      });
+      return marker;
+    }
+  };
 
   return (
     <main
       className="detailsDiv"
-      style={selected === null ? closedDrawer : openDrawer}
+      style={selected !== null ? openDrawer : closedDrawer}
     >
-      <figure className="mapDiv"></figure>
+      <figure className="mapDiv">
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
+          key={mapKey}
+          center={restaurantLocation}
+          zoom={selected !== null ? 14 : 1}
+          resetBoundsOnResize={true}
+          yesIWantToUseGoogleMapApiInternals
+          onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
+        ></GoogleMapReact>
+      </figure>
       <header className="nameBanner">
-        <h2 className='restaurantName'>{name}</h2>
-        <p className='restaurantCategory'>{category}</p>
+        <h2 className="restaurantName">
+          {name ? name : "Please select a restaurant"}
+        </h2>
+        <p className="restaurantCategory">{category}</p>
       </header>
       <address className="contactDiv">
         <p className="addressP">
-          {location?.address && location.address}{<br/>}
+          {location?.address && location.address}
+          {<br />}
           {location?.formattedAddress && location.formattedAddress[1]}
-          
         </p>
         <p className="phoneP">
-          {contact?.formattedPhone && contact.formattedPhone }
+          {contact?.formattedPhone && contact.formattedPhone}
         </p>
-        <p className="twitterP">{contact?.twitter ? `@${contact.twitter}`:""}</p>
+        <p className="twitterP">
+          {contact?.twitter ? `@${contact.twitter}` : ""}
+        </p>
       </address>
     </main>
   );

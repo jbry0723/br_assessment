@@ -4,7 +4,7 @@ import mapIcon from "../assets/map_icon.png";
 import backIcon from "../assets/back_icon.png";
 
 function Navbar(props) {
-  let {clearSelected}=props
+  let {clearSelected, mapToggle, setMapToggle}=props
   const hideButton = {
     opacity: "0",
     transition: "opacity .4s",
@@ -14,21 +14,29 @@ function Navbar(props) {
     transition: "opacity .4s",
   };
 
-  let handleClick = (e) => {
+  let handleBackClick = (e) => {
     e.preventDefault();
     clearSelected();
+    setMapToggle(false)
   };
+
+  let handleMapClick = (e) => {
+    e.preventDefault();
+    setMapToggle(true)
+  };
+
+
   return (
     <nav className="topBar">
       <img
         className="backIcon"
-        style={props.selected === null ? hideButton : showButton}
+        style={(props.selected === null) ? hideButton : showButton}
         src={backIcon}
         alt="Back Icon"
-        onClick={handleClick}
+        onClick={handleBackClick}
       />
       <h1 className="titleText">Lunch Tyme</h1>
-      <img className="mapIcon" src={mapIcon} alt="Map Icon" />
+      <img className="mapIcon" onClick={handleMapClick} src={mapIcon} alt="Map Icon" />
     </nav>
   );
 }

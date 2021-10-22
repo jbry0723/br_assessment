@@ -29,6 +29,7 @@ function RestaurantList(props) {
         );
       })}
     </main>
+
   );
 }
 

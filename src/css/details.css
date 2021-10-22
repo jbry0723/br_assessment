@@ -1,5 +1,5 @@
 .detailsDiv {
-  position: absolute;
+  position: fixed;
   top: 65px;
   left: 0;
   right: 0;
@@ -8,70 +8,108 @@
   height: 100%;
   background-color: white;
   z-index: 1;
-  text-align:left;
+  text-align: left;
 }
 
-.mapDiv{
-    background-color:black;
-    height:180px;
-    width:100%;
-    margin: 0 0 0 0;
-}
-
-.nameBanner{
-  background-color:#34B379;
-  height:60px;
-  width:100%;
+.mapDiv {
+  background-color: black;
+  height: 180px;
+  width: 100%;
   margin: 0 0 0 0;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items: flex-start;
-
 }
-.restaurantName{
-  font-family:"Mulish";
+
+.nameBanner {
+  background-color: #34b379;
+  height: 60px;
+  width: 100%;
+  margin: 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.restaurantName {
+  font-family: "Mulish";
   font-weight: 600;
   color: #ffffff;
-  font-size:16px;
+  font-size: 16px;
   margin: 0px 0px 3px 12px;
 }
-.restaurantCategory{
-  font-family:"Mulish";
+.restaurantCategory {
+  font-family: "Mulish";
   font-weight: 400;
   color: #ffffff;
-  font-size:12px;
+  font-size: 12px;
   margin: 3px 0px 0px 12px;
 }
 
-address, p{
-  font-family:"Mulish";
-  font-style:normal;
+address,
+p {
+  font-family: "Mulish";
+  font-style: normal;
   font-weight: 400;
-  font-size:16px;
-  color:#2A2A2A;
-  margin:0 0 0 0;
+  font-size: 16px;
+  color: #2a2a2a;
+  margin: 0 0 0 0;
 }
-address{
-margin-left:12px;
-}
-
-.addressP{
-  margin-top:12px;
-}
-.phoneP{
-  margin-top:26px
+address {
+  margin-left: 12px;
 }
 
-.twitterP{
-  margin-top:26px
+.addressP {
+  margin-top: 12px;
+}
+.phoneP {
+  margin-top: 26px;
 }
 
+.twitterP {
+  margin-top: 26px;
+}
 
+@media (min-width: 550px) {
+  .detailsDiv {
+    max-width: 100% !important;
+    width: 50%;
+    opacity: 1 !important;
+  }
+  .restaurantName {
+    font-size: 18px;
+    
+  }
+  .restaurantCategory {
+    font-size: 14px;
+  }
+  
+  
+}
+@media (min-width: 1000px) {
+ 
+  .mapDiv{
+    height:360px;
+  }
+}
 
+@media (min-width: 1030px) {
+  .detailsDiv {
+    padding-top: 65px;
+    overflow-y: hidden;
+    position:static ;
+    width:auto;
+  }
+ 
+}
 
+@media (min-width: 1800px) {
+  .mapDiv {
+    height:540px;
+  }
 
-
-
-
-
+  .restaurantName {
+    font-size: 20px;
+    
+  }
+  .restaurantCategory {
+    font-size: 16px;
+  }
+}

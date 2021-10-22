@@ -1,4 +1,6 @@
 .topBar {
+  position: fixed;
+  margin-bottom: 50px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -6,16 +8,15 @@
   background-color: #43e895;
   height: 65px;
   vertical-align: middle;
+  z-index: 3;
 }
 .titleText {
   font-family: "Mulish";
   font-weight: 600;
   color: #ffffff;
   font-size: 17px;
-  margin-top: 8%;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
+  margin-bottom: 1%;
+  margin-left: 3%;
 }
 
 .mapIcon {
@@ -33,11 +34,29 @@
 }
 
 .hiddenBackIcon {
+  width: auto;
+  height: 25px;
+  margin-top: 2%;
+  margin-left: 3.5%;
+  visibility: hidden;
+}
 
-    width: auto;
-    height: 25px;
-    margin-top: 2%;
-    margin-left: 3.5%;
-    visibility:hidden;
+@media (min-width: 550px) {
+  .titleText {
+    font-size: 24px;
+  }
+  .mapIcon {
+    visibility: hidden;
+  }
+  .backIcon {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 1030px) {
+  .titleText {
+    font-size: 28px;
+    margin-bottom:1%;
+  }
   
 }
