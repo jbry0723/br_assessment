@@ -16,7 +16,6 @@ function App(props) {
   let clearSelected = () => {
     setSelectedRestaurant(null);
   };
-  
 
   useEffect(() => {
     props.getList();
@@ -24,10 +23,18 @@ function App(props) {
 
   return (
     <div className="App">
-      <Navbar selected={selectedRestaurant} clearSelected={clearSelected} mapToggle={mapToggle} setMapToggle={setMapToggle} />
+      <Navbar
+        selected={selectedRestaurant}
+        clearSelected={clearSelected}
+        mapToggle={mapToggle}
+        setMapToggle={setMapToggle}
+      />
       <div>
-        <RestaurantList updateSelected={updateSelected} />
-        <Details selected={selectedRestaurant} />
+        <RestaurantList
+          updateSelected={updateSelected}
+          setMapToggle={setMapToggle}
+        />
+        <Details selected={selectedRestaurant} mapToggle={mapToggle} />
       </div>
     </div>
   );

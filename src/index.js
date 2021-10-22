@@ -9,14 +9,11 @@ import thunk from "redux-thunk";
 import { rootReducer } from "./state/reducers";
 import "../src/css/index.css";
 
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
 
 const store = createStore(
   rootReducer,
-  composeEnhancers(
-    applyMiddleware(thunk))
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 ReactDOM.render(
@@ -29,6 +26,6 @@ ReactDOM.render(
 );
 
 // If you want to start measuring performance in your app, pass a function
-// to log results 
+// to log results
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

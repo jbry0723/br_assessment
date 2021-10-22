@@ -47,14 +47,12 @@
   }
 }
 
-  @media (min-width: 550px) {
-    .nameText {
-      font-size: 20px;
-      
-    }
-
-    .categoryText {
-      font-size: 15px;
-    }
+@media (min-width: 550px) {
+  .nameText {
+    font-size: 20px;
   }
 
+  .categoryText {
+    font-size: 15px;
+  }
+}

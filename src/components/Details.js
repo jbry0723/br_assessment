@@ -10,8 +10,10 @@ function Details(props) {
     contact: {},
     location: { lat: 39.8097343, lng: -98.5556199 },
   });
+  let { name, category, contact, location } = restaurantData;
+  let { selected, mapToggle } = props;
 
-  let { selected } = props;
+  console.log(props);
   const closedDrawer = {
     maxWidth: "0",
     opacity: "0",
@@ -30,8 +32,6 @@ function Details(props) {
       mapKey = Math.random() * Math.random();
     }
   }, [selected, props.selected]);
-
-  let { name, category, contact, location } = restaurantData;
 
   const restaurantLocation = {
     lat: restaurantData?.location.lat,
@@ -54,7 +54,7 @@ function Details(props) {
   return (
     <main
       className="detailsDiv"
-      style={selected !== null ? openDrawer : closedDrawer}
+      style={mapToggle === true ? openDrawer : closedDrawer}
     >
       <figure className="mapDiv">
         <GoogleMapReact

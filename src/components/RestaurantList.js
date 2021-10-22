@@ -5,7 +5,7 @@ import sLoadIcon from "../assets/loading_s_small.gif";
 import ListItem from "../components/ListItem";
 
 function RestaurantList(props) {
-  let { updateSelected } = props;
+  let { updateSelected, setMapToggle } = props;
   let { isLoading, data } = props.state.restaurant;
   if (isLoading) {
     return (
@@ -25,11 +25,11 @@ function RestaurantList(props) {
             name={entry.name}
             category={entry.category}
             updateSelected={updateSelected}
+            setMapToggle={setMapToggle}
           />
         );
       })}
     </main>
-
   );
 }
 

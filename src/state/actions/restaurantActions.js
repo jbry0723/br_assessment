@@ -13,7 +13,3 @@ export const getList = () => (dispatch) => {
     })
     .catch((err) => dispatch({ type: GET_LIST_FAIL, payload: err }));
 };
-
-
-
-

@@ -5,8 +5,9 @@ function ListItem(props) {
   let handleClick = (e) => {
     e.preventDefault();
     updateSelected(props.id);
+    setMapToggle(true);
   };
-  let { updateSelected, bgImg, name, category } = props;
+  let { updateSelected, bgImg, name, category, setMapToggle } = props;
   return (
     <section
       onClick={handleClick}

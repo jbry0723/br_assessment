@@ -72,42 +72,30 @@ address {
     max-width: 100% !important;
     width: 50%;
     opacity: 1 !important;
+    padding-top: 65px;
+    overflow-y: hidden;
+    position: static;
+    width: auto;
   }
   .restaurantName {
     font-size: 18px;
-    
   }
   .restaurantCategory {
     font-size: 14px;
   }
-  
-  
-}
-@media (min-width: 1000px) {
- 
-  .mapDiv{
-    height:360px;
-  }
-}
 
-@media (min-width: 1030px) {
-  .detailsDiv {
-    padding-top: 65px;
-    overflow-y: hidden;
-    position:static ;
-    width:auto;
+  .mapDiv {
+    height: 360px;
   }
- 
 }
 
 @media (min-width: 1800px) {
   .mapDiv {
-    height:540px;
+    height: 540px;
   }
 
   .restaurantName {
     font-size: 20px;
-    
   }
   .restaurantCategory {
     font-size: 16px;
