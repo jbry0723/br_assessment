@@ -12,8 +12,8 @@ function Details(props) {
   });
   let { name, category, contact, location } = restaurantData;
   let { selected, mapToggle } = props;
+  let { isLoading } = props.state.restaurant;
 
-  console.log(props);
   const closedDrawer = {
     maxWidth: "0",
     opacity: "0",
@@ -50,6 +50,10 @@ function Details(props) {
       return marker;
     }
   };
+
+  if (isLoading) {
+    return null;
+  }
 
   return (
     <main

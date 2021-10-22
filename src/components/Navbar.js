@@ -4,7 +4,7 @@ import mapIcon from "../assets/map_icon.png";
 import backIcon from "../assets/back_icon.png";
 
 function Navbar(props) {
-  let { clearSelected, mapToggle, setMapToggle } = props;
+  let { mapToggle, setMapToggle } = props;
   const hideButton = {
     opacity: "0",
     transition: "opacity .4s",
